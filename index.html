@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191a24" />
+    <title>Pause — intentional scrolling</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <a class="brand" href="#top" aria-label="Pause home"><span class="brand-mark">P</span>pause.</a>
+        <div class="header-actions">
+          <span id="streak" class="streak">✦ 3 mindful pauses</span>
+          <button class="icon-button" id="theme-toggle" aria-label="Toggle color theme">☼</button>
+        </div>
+      </header>
+
+      <section class="hero" id="top">
+        <p class="eyebrow">A kinder way to focus</p>
+        <h1>Before you scroll,<br /><em>take a second.</em></h1>
+        <p class="intro">A tiny intentional pause between you and the apps that pull you away. What would help right now?</p>
+        <div class="pause-card" aria-live="polite">
+          <div class="orb-wrap"><div class="orb" id="orb"><span id="countdown">5</span></div></div>
+          <div class="pause-copy">
+            <p class="card-label">YOUR RESET</p>
+            <h2 id="prompt">Take one slow breath.</h2>
+            <p id="prompt-detail">In through your nose, out a little longer.</p>
+          </div>
+          <button class="primary" id="pause-button">Start pause <span>→</span></button>
+        </div>
+      </section>
+
+      <section class="choices" aria-labelledby="choose-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Choose a better next move</p><h2 id="choose-title">What do you need?</h2></div>
+          <button class="text-button" id="shuffle">Shuffle suggestion ↻</button>
+        </div>
+        <div class="choice-grid" id="choice-grid">
+          <button class="choice active" data-title="Take one slow breath." data-detail="In through your nose, out a little longer." data-icon="◌"><span class="choice-icon peach">◌</span><strong>Reset</strong><small>30 second breath</small></button>
+          <button class="choice" data-title="Put the phone down." data-detail="Give your hands a tiny break from the feed." data-icon="⌁"><span class="choice-icon blue">⌁</span><strong>Disconnect</strong><small>2 minute break</small></button>
+          <button class="choice" data-title="Start the thing." data-detail="Set a gentle 10-minute focus sprint." data-icon="↗"><span class="choice-icon yellow">↗</span><strong>Begin</strong><small>10 minute sprint</small></button>
+          <button class="choice" data-title="Do absolutely nothing." data-detail="Rest counts. Look out a window for a moment." data-icon="☁"><span class="choice-icon lavender">☁</span><strong>Soften</strong><small>1 minute of calm</small></button>
+        </div>
+      </section>
+
+      <section class="today">
+        <div class="today-top"><div><p class="eyebrow">Today, gently</p><h2>Your attention has a home.</h2></div><span class="date" id="today-date"></span></div>
+        <div class="progress-row"><div class="progress-label"><span>Intentional moments</span><strong id="progress-text">3 / 5</strong></div><div class="progress-track"><i id="progress-bar"></i></div></div>
+        <div class="wins" id="wins"><span>✓ Took a breath</span><span>✓ Focused for 10 min</span><span>✓ Put phone away</span></div>
+      </section>
+
+      <footer>Made for your real life, not an optimized one. <span>✦</span></footer>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
